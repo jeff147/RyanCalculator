@@ -24,8 +24,17 @@ namespace RyanCalculator
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            int added = int.Parse(txtStitchCount.Text) + int.Parse(txtQuantity.Text);
-            txtResult.Text = added.ToString();
+            int added = 0;
+            try
+            {
+                added = int.Parse(txtStitchCount.Text) + int.Parse(txtQuantity.Text);
+                txtResult.Text = added.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please input numbers only.");
+                txtResult.Text = "ERROR";
+            }
         }
     }
 }
