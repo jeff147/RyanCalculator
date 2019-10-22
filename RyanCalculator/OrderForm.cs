@@ -240,7 +240,7 @@ namespace RyanCalculator
                         break;
                 }
             }
-            txtResult.Text = price.ToString();
+            txtResult.Text = price.ToString("C", new System.Globalization.CultureInfo("en-US"));
 
 
 
